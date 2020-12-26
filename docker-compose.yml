@@ -9,7 +9,7 @@ services:
       - /opt/auth:/auth
 
     entrypoint: 
-      - htpasswd -Bbn $HTAUSER $HTPASS > /auth/htpasswd
+      - htpasswd -Bbn -c /auth/htpasswd $HTAUSER $HTPASS
 
   registry:
     depends_on:
